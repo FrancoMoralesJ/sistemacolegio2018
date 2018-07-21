@@ -28,7 +28,6 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         rSButtonCircle1 = new rojerusan.RSButtonCircle();
         rSButtonCircle2 = new rojerusan.RSButtonCircle();
-        jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txt_UsuarioLogin = new javax.swing.JTextField();
@@ -54,11 +53,6 @@ public class Login extends javax.swing.JFrame {
         rSButtonCircle2.setText("X");
         rSButtonCircle2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jPanel1.add(rSButtonCircle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, 40, 40));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Login puto");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 70));
 
@@ -142,7 +136,6 @@ public class Login extends javax.swing.JFrame {
     public javax.swing.JButton btn_Iniciar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private rojerusan.RSButtonCircle rSButtonCircle1;
