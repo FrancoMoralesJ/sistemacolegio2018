@@ -60,7 +60,7 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
         txt_nomApo = new javax.swing.JTextField();
         txt_apellidosApo = new javax.swing.JTextField();
         txt_correoApo = new javax.swing.JTextField();
-        txt_celularApo = new javax.swing.JTextField();
+        txt_celularApodera = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -299,7 +299,7 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(txt_celularApo, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txt_celularApodera, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel24)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -331,7 +331,7 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jComboBox3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_celularApo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_celularApodera, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel14)
                         .addComponent(jLabel24)))
                 .addGap(39, 39, 39)
@@ -655,7 +655,7 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
     public javax.swing.JTextField txt_DIRECION;
     public javax.swing.JTextField txt_apellidomaterno;
     private javax.swing.JTextField txt_apellidosApo;
-    private javax.swing.JTextField txt_celularApo;
+    private javax.swing.JTextField txt_celularApodera;
     public javax.swing.JTextField txt_celulares;
     public javax.swing.JTextField txt_consulta;
     private javax.swing.JTextField txt_correoApo;

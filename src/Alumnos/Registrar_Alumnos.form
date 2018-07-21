@@ -552,7 +552,7 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jComboBox1" max="32767" attributes="0"/>
                                           <Group type="102" attributes="0">
-                                              <Component id="txt_celularApo" min="-2" pref="254" max="-2" attributes="0"/>
+                                              <Component id="txt_celularApodera" min="-2" pref="254" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -596,7 +596,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jComboBox3" alignment="1" min="-2" pref="25" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="txt_celularApo" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="txt_celularApodera" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                                       <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -618,7 +618,7 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="txt_correoApo">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txt_celularApo">
+                    <Component class="javax.swing.JTextField" name="txt_celularApodera">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel14">
                       <Properties>
