@@ -82,6 +82,7 @@ public class Login extends javax.swing.JFrame {
         btn_Iniciar.setBackground(new java.awt.Color(68, 68, 159));
         btn_Iniciar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btn_Iniciar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Iniciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosToolBar/guardar.png"))); // NOI18N
         btn_Iniciar.setText("Iniciar");
         jPanel2.add(btn_Iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 150, 50));
 
