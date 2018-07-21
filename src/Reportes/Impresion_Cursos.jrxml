@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="390" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="869fc663-534f-40ac-bd80-ebb09eed1298">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT CODIGO_CURSO AS CODIGO_CURSO, CURSO AS CURSO, DOCENTE AS DOCENTE, ESPECIALIDAD AS ESPECIALIDAD, SEMESTRE AS SEMESTRE, FECHA_REGISTRO AS FECHA_REGISTRO FROM cursos WHERE CURSO='Literatura Universal']]>
+	</queryString>
+	<field name="CODIGO_CURSO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CURSO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DOCENTE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ESPECIALIDAD" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SEMESTRE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FECHA_REGISTRO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="79" backcolor="#CCCCCC" uuid="1135e45f-5192-40fe-a8ac-931a329d5546"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="79" backcolor="#CCCCCC" uuid="b4cc3a9a-8f1d-454f-bca1-e1d4a2290303"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CURSOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="95" y="0" width="92" height="20" uuid="11551092-ae27-468a-8895-2fc732e41457"/>
+				<text><![CDATA[CODIGO_CURSO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="20" width="92" height="20" uuid="dd3bcef7-e451-4153-bd6c-f44357dc2c29"/>
+				<text><![CDATA[CURSO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="41" width="92" height="20" uuid="611e0889-67c0-43f7-9e29-4ef961dcdc60"/>
+				<text><![CDATA[DOCENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="61" width="92" height="20" uuid="89ebe188-df1c-471f-be55-af6c195b2101"/>
+				<text><![CDATA[ESPECIALIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="81" width="92" height="20" uuid="204f6e4a-77fd-4ece-87be-8ab62a4ad78f"/>
+				<text><![CDATA[SEMESTRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="101" width="92" height="20" uuid="2a0e6104-9933-4a21-a898-5c5838874111"/>
+				<text><![CDATA[FECHA_REGISTRO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="272" y="0" width="92" height="20" uuid="8cc47fbd-692b-4cb3-977a-65db99c5f39e"/>
+				<textFieldExpression><![CDATA[$F{CODIGO_CURSO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="20" width="92" height="20" uuid="56b75b74-3a68-4967-9f46-f9067b09ab96"/>
+				<textFieldExpression><![CDATA[$F{CURSO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="40" width="92" height="20" uuid="2c8462a3-d345-4f60-b47d-9a7e2ab1ec8b"/>
+				<textFieldExpression><![CDATA[$F{DOCENTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="60" width="92" height="20" uuid="54b9c6e0-47e2-4766-8c43-23a8bf92c3e8"/>
+				<textFieldExpression><![CDATA[$F{ESPECIALIDAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="81" width="92" height="20" uuid="a6cd62a5-375d-4aff-8a43-14b7c8f841f7"/>
+				<textFieldExpression><![CDATA[$F{SEMESTRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="101" width="92" height="20" uuid="2a5bf814-253b-4073-9dd4-3e9da7ad9d42"/>
+				<textFieldExpression><![CDATA[$F{FECHA_REGISTRO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="379" y="23" width="120" height="22" uuid="56c0c85c-ce5e-43c6-aa20-2481f098f15d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="256" y="25" width="123" height="20" uuid="1e8be3aa-d6be-4e5d-bec5-600ba1321cff"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Reporte:]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

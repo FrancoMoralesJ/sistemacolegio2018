@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="480" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d393217f-58cc-42b9-bf4f-395a440d94b0">
+	<property name="ireport.zoom" value="0.75"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT CODIGO_NOTA AS CODIGO_NOTA, ALUMNO AS ALUMNO, SEMESTRE AS SEMESTRE, CURSO AS CURSO, DOCENTE AS DOCENTE, NOTA_1 AS NOTA_1, NOTA_2 AS NOTA_2, NOTA_3 AS NOTA_3, NOTA_4 AS NOTA_4, PROMEDIO AS PROMEDIO, OBSERVACION AS OBSERVACION, FECHA_REGISTGRO AS FECHA_REGISTGRO FROM nota WHERE ALUMNO ='Julio Medina Flores']]>
+	</queryString>
+	<field name="CODIGO_NOTA" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ALUMNO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SEMESTRE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CURSO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DOCENTE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NOTA_1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NOTA_2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NOTA_3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NOTA_4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PROMEDIO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="OBSERVACION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FECHA_REGISTGRO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="179" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-13" y="0" width="583" height="179" backcolor="#CCCCCC" uuid="f1e1d0b0-71a5-41c2-b067-f7c2428dc3ce"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="36" y="9" width="292" height="34" forecolor="#000000" backcolor="#CCCCCC" uuid="10b4ba4c-2f56-458e-9c94-511f8722519a"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Centro Estudios "El Saber"]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="36" y="61" width="224" height="18" forecolor="#000000" backcolor="#CCCCCC" uuid="18792b9a-19df-40c0-a0b9-f78380635c7c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Av. Robles N 012 Breña Tlf: 2514-025]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="36" y="43" width="219" height="18" forecolor="#000000" backcolor="#CCCCCC" uuid="724e6486-3597-47a4-b5c8-dabb47e45c20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Surcusales-Nacionales-Provinciales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="122" y="89" width="292" height="34" forecolor="#000000" backcolor="#CCCCCC" uuid="f0923923-da93-4b8b-b2e6-1e806686303c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Boleta de Notas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="213" splitType="Stretch">
+			<staticText>
+				<reportElement x="36" y="53" width="122" height="20" uuid="21f5108f-04a6-4813-9894-a692cbaa854d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALUMNO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="73" width="188" height="20" uuid="d989ad89-8e0a-4555-9ee9-9178e5a8dae8"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEMESTRE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="93" width="76" height="20" uuid="2f6d422c-34df-4ae1-98de-3ca45d96a7cc"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CURSO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="99" y="93" width="78" height="20" uuid="921b2e0f-8572-42ec-b2d0-000ef5e86cb0"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOTA 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="177" y="93" width="86" height="20" uuid="67a10372-3304-4aad-aeb3-212d481a5abc"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOTA 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="93" width="63" height="20" uuid="c1ce2412-6229-47ef-8c87-387500b967e4"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOTA 3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="93" width="70" height="20" uuid="d86b3b16-d4d9-4ac0-88ff-d3511922be01"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOTA 4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="398" y="93" width="81" height="20" uuid="9b74650c-72df-4a47-b7fa-2bacd9896cfa"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROMEDIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="33" width="122" height="20" uuid="91f8c1c7-7afe-487e-bbf9-4f013c48d97c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA REGISTGRO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="177" y="53" width="46" height="20" uuid="4f26726c-bb0e-48f9-b0dd-b2ea3a64c300"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ALUMNO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="73" width="112" height="20" uuid="97171c92-ad9e-426e-9d88-a8f4d60362ad"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SEMESTRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="36" y="113" width="62" height="20" uuid="7024244d-f1ba-47ac-a501-8c70d69c4598"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CURSO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="113" width="78" height="20" uuid="9b0daadf-ce19-4ed5-8de7-eefb9fb1362d"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOTA_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="113" width="86" height="20" uuid="1f479fec-b302-42e8-b726-d80e25e51945"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOTA_2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="113" width="65" height="20" uuid="5687b2fd-4f23-4feb-b95c-bf2ab80e2d17"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOTA_3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="326" y="113" width="72" height="20" uuid="97ec51df-a1d9-420c-b0cc-bac423525a85"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOTA_4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="398" y="113" width="81" height="20" uuid="6f0149d7-5458-4cda-a69e-d64c9200e1f2"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PROMEDIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="33" width="46" height="20" uuid="9f91052e-87dc-4d79-adee-35ab1ebc61fd"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FECHA_REGISTGRO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="425" y="13" width="100" height="20" uuid="973791df-d0ab-451a-a6c3-207cd9bc5b39"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="290" y="13" width="135" height="20" uuid="cdf75657-9018-48de-9a6b-963f5a1a63c1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Reporte:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

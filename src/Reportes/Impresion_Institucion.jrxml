@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="25f5c4b8-ffdd-4ed1-8703-1c2caf648d08">
+	<property name="ireport.zoom" value="0.75"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     institucion.`CODIGO_INSTITUCION` AS institucion_CODIGO_INSTITUCION,
+     institucion.`INSTITUCION` AS institucion_INSTITUCION,
+     institucion.`DIRECCION` AS institucion_DIRECCION,
+     institucion.`TELEFONO` AS institucion_TELEFONO,
+     institucion.`EMAIL` AS institucion_EMAIL,
+     institucion.`FECHA_REGISTRO` AS institucion_FECHA_REGISTRO,
+     institucion.`DIRECTOR` AS institucion_DIRECTOR
+FROM
+     `institucion` institucion
+
+
+
+WHERE 
+
+INSTITUCION='EL SABER']]>
+	</queryString>
+	<field name="institucion_CODIGO_INSTITUCION" class="java.lang.String"/>
+	<field name="institucion_INSTITUCION" class="java.lang.String"/>
+	<field name="institucion_DIRECCION" class="java.lang.String"/>
+	<field name="institucion_TELEFONO" class="java.lang.String"/>
+	<field name="institucion_EMAIL" class="java.lang.String"/>
+	<field name="institucion_FECHA_REGISTRO" class="java.lang.String"/>
+	<field name="institucion_DIRECTOR" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="19" y="0" width="536" height="50" uuid="55bc7a75-a8cc-4471-9ab2-e53c1849ace7"/>
+				<textElement textAlignment="Center">
+					<font size="28" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Institucion]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="17" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="241" splitType="Stretch">
+			<staticText>
+				<reportElement x="129" y="123" width="106" height="20" uuid="aa5c3df3-fd5a-4b1d-baab-6967d88e12eb"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="163" width="106" height="20" uuid="59b5588e-4641-4917-acdf-c0e1f7be6215"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECTOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="103" width="106" height="20" uuid="fa9daec6-14b2-4100-b88b-9da7ecbed88f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELEFONO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="143" width="106" height="20" uuid="586e235d-e4a1-482c-9c24-edcbd491ad71"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[F/REGISTRO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="63" width="106" height="20" uuid="7ed02999-f627-4ee9-85fc-e8a93cbc0064"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[INSTITUCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="83" width="106" height="20" uuid="84d0ea48-6212-41c5-9543-d1b8969f123b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="43" width="106" height="20" uuid="f9697007-0810-488d-ac0d-1560bdaac154"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nª CODIGO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="253" y="163" width="150" height="20" uuid="631eba32-5708-43e6-87f4-7f3ef9643943"/>
+				<textFieldExpression><![CDATA[$F{institucion_DIRECTOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="63" width="150" height="20" uuid="a9a985c2-4a65-4cc7-bcd5-3dd3a2304204"/>
+				<textFieldExpression><![CDATA[$F{institucion_INSTITUCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="143" width="150" height="20" uuid="ed42a956-0d36-4bb9-9098-cb5acde6c48c"/>
+				<textFieldExpression><![CDATA[$F{institucion_FECHA_REGISTRO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="83" width="150" height="20" uuid="3e5e55e4-d1a9-4e85-a963-f8b0447ef6eb"/>
+				<textFieldExpression><![CDATA[$F{institucion_DIRECCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="103" width="150" height="20" uuid="ce30727e-294f-43c8-aadd-20737b6f6f21"/>
+				<textFieldExpression><![CDATA[$F{institucion_TELEFONO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="43" width="150" height="20" uuid="8da2b075-7ff5-4088-aa62-db4a4c3eecee"/>
+				<textFieldExpression><![CDATA[$F{institucion_CODIGO_INSTITUCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="123" width="150" height="20" uuid="13a3ae94-6f52-4c73-b4f3-e6a84607f2d3"/>
+				<textFieldExpression><![CDATA[$F{institucion_EMAIL}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="49" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="10" width="116" height="20" uuid="20cfb7fa-ff69-49a0-98da-4b4ed911780f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Reporte:]]></text>
+			</staticText>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="403" y="10" width="134" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="09763ee0-d1d0-4253-b970-d2846ec1a6dd"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["" + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="123" y="10" width="114" height="20" uuid="a8ace4f3-a0fe-4624-a232-8db08eaf9ab7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

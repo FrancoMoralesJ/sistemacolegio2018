@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2fccfc42-d33f-4ef9-a690-d04a78544362">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT CODIGO_FICHA AS MI_CODIGO , ALUMNO AS NOMBREALUMNO, SEMESTRE AS SEMESTRE , FECHA_REGISTRO AS FREGISTRO FROM 
+ficha_registro WHERE ALUMNO='Julio Medina Flores';]]>
+	</queryString>
+	<field name="MI_CODIGO" class="java.lang.String"/>
+	<field name="NOMBREALUMNO" class="java.lang.String"/>
+	<field name="SEMESTRE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FREGISTRO" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="47" y="0" width="430" height="79" uuid="ea489f9f-196f-4473-a481-01b5ec425f9e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="125" y="12" width="280" height="55" uuid="3af79b23-2b14-45b1-85f2-e131e0530dff"/>
+				<textElement>
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[Reporte Ficha Matricula]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="10" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="10" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="191" splitType="Stretch">
+			<textField>
+				<reportElement x="214" y="34" width="312" height="31" uuid="68470d0c-a490-45b7-a80b-f9f314c71956"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MI_CODIGO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="65" width="312" height="24" uuid="0325a75b-77ae-46a8-853b-dbde179154f5"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBREALUMNO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="34" width="138" height="20" uuid="a47106f0-20bf-4d59-a168-5642339f0cb0"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="65" width="138" height="20" uuid="3cb7d90e-b09e-4a86-9d24-f99d6f7f1278"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBREALUMNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="100" width="138" height="20" uuid="20313742-ae8b-41dc-b6dc-45b974787fae"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEMESTRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="136" width="138" height="20" uuid="46556402-385a-44f1-a96a-b22bfa8b44e5"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FREGISTRO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="214" y="89" width="312" height="31" uuid="75d4aaed-a9b1-44af-92cd-5daed2d9598e"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SEMESTRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="120" width="312" height="24" uuid="cf8fc01d-0550-46df-a503-2fb936c71e49"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FREGISTRO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="21" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="24" splitType="Stretch"/>
+	</summary>
+</jasperReport>

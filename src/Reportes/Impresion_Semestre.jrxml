@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="350" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f7a6099c-2347-4d7f-a7aa-9e966b4cbcd0">
+	<property name="ireport.zoom" value="0.75"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT CODIGO_SEMESTRE AS CODIGOSEMESTRE,SEMESTRE AS SEMESTRE FROM semestre WHERE SEMESTRE='V']]>
+	</queryString>
+	<field name="CODIGOSEMESTRE" class="java.lang.String"/>
+	<field name="SEMESTRE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="79" forecolor="#FFFFFF" backcolor="#CCCCCC" uuid="a40e571c-20c8-474d-b5b1-58f9e55a85c8"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="53" y="14" width="443" height="52" uuid="c6dc9125-eb22-4308-8849-5c03ad104b70"/>
+				<textElement>
+					<font size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Semestre]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="25" splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="119" splitType="Stretch">
+			<textField>
+				<reportElement x="249" y="9" width="277" height="47" uuid="01b06945-c6f6-4df1-ab8f-d89704aef5f3"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CODIGOSEMESTRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="69" width="277" height="37" uuid="85295846-6b1b-403b-bf38-4ff810817cf6"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SEMESTRE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="16" y="63" width="201" height="45" uuid="ac7ad023-c7a9-409e-aac0-991a140cbc26"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEMESTRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="5" width="201" height="45" uuid="06e14657-d690-4167-83e5-54ca2b0995f6"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CODIGO SEMESTRE]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="86" splitType="Stretch">
+			<staticText>
+				<reportElement x="228" y="10" width="136" height="20" uuid="3f17fab3-1634-4964-9416-cb648a3ce29a"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Reporte:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="378" y="10" width="177" height="20" uuid="1396c8d8-0474-4dc2-9bcc-b2865a6cce25"/>
+				<textElement>
+					<font size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>

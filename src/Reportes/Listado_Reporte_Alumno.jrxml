@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="89133590-73d5-44f8-b666-2b506d278129">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     CODIGO_ALUMNO AS alumnos_CODIGO_ALUMNO,
+     N_CARNET AS alumnos_N_CARNET,
+     ALUMNO AS alumnos_ALUMNO,
+    DIRECCION AS alumnos_DIRECCION,
+     CELULAR AS alumnos_CELULAR,
+    FECHA_NACIMIENTO AS alumnos_FECHA_NACIMIENTO
+FROM
+      alumnos]]>
+	</queryString>
+	<field name="alumnos_CODIGO_ALUMNO" class="java.lang.String"/>
+	<field name="alumnos_N_CARNET" class="java.lang.String"/>
+	<field name="alumnos_ALUMNO" class="java.lang.String"/>
+	<field name="alumnos_DIRECCION" class="java.lang.String"/>
+	<field name="alumnos_CELULAR" class="java.lang.String"/>
+	<field name="alumnos_FECHA_NACIMIENTO" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="75" y="12" width="424" height="35" uuid="0bf06e5c-d160-4c49-94a6-349baa28f58b"/>
+				<textElement textAlignment="Center">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Alumnos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="369" y="0" width="92" height="18" forecolor="#FFFFFF" backcolor="#999999" uuid="fe7f0c9d-8af8-448e-8c0b-9ecaa39a5262"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[CELULAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="94" y="0" width="138" height="18" forecolor="#FFFFFF" backcolor="#999999" uuid="3f6bf81f-eaa1-454b-ae06-e9e8e1726e4d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ALUMNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="0" width="92" height="18" forecolor="#FFFFFF" backcolor="#999999" uuid="9cec5189-4a90-4f4a-b488-740e2da70510"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nª CARNET]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="461" y="0" width="92" height="18" forecolor="#FFFFFF" backcolor="#999999" uuid="444db126-44c1-4bd4-950e-637bb197f9d1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[F/NACIMIENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="232" y="0" width="137" height="18" forecolor="#FFFFFF" backcolor="#999999" uuid="0a1fa402-45e7-448d-8b2b-efa251e57a76"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[DIRECCION]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="0" width="92" height="20" uuid="460173f7-8ba1-44b4-9844-a2bd74884bc3"/>
+				<textFieldExpression><![CDATA[$F{alumnos_N_CARNET}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="232" y="0" width="137" height="20" uuid="f9f5e020-4fbd-4753-be3c-eb0ebcfbf0d7"/>
+				<textFieldExpression><![CDATA[$F{alumnos_DIRECCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="92" y="0" width="140" height="20" uuid="505c104c-4928-455b-ae83-023a6e77144f"/>
+				<textFieldExpression><![CDATA[$F{alumnos_ALUMNO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="0" width="92" height="20" uuid="306cc56b-f735-4916-a234-cf6276f0242f"/>
+				<textFieldExpression><![CDATA[$F{alumnos_CELULAR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="463" y="0" width="92" height="20" uuid="c3983db3-d985-406a-99e1-5fd1a026f38a"/>
+				<textFieldExpression><![CDATA[$F{alumnos_FECHA_NACIMIENTO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="11" width="137" height="20" uuid="c7f75d8c-27a4-447b-881f-ca53201d7535"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Reporte:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="137" y="11" width="100" height="20" uuid="a9ee2e58-214e-46e0-a76e-086d4b22d2b3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="11" width="80" height="20" uuid="40d59b56-58eb-4690-98f7-903cf917045e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="485" y="11" width="40" height="20" uuid="09ac121a-776a-4ff1-af7b-cfb1d4f332bf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
