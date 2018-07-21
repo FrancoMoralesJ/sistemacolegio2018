@@ -12,10 +12,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author PC
- */
+//PUTOSSSSSSSSS 
+
 public class Sistemadecolegiojose extends Conexiones.Conexion {
 
     public static void main(String[] args) {
