@@ -29,9 +29,12 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
+        txtcodigo = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        txtalumno = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        txtdireccion = new javax.swing.JTextField();
         txtcelular = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -50,9 +53,9 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
         jLabel13 = new javax.swing.JLabel();
         txt_DIRECION = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        txt_celulares1 = new javax.swing.JTextField();
+        txt_txtdniPadre = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
-        txt_celulares2 = new javax.swing.JTextField();
+        txt_dniMadre = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         txt_nomApo = new javax.swing.JTextField();
         txt_apellidosApo = new javax.swing.JTextField();
@@ -67,9 +70,11 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
         jComboBox3 = new javax.swing.JComboBox<>();
         jLabel24 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        txt_apellidomaterno = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
+        txtalumno2 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        jlbl_foto = new javax.swing.JLabel();
+        jlbl_fotoA = new javax.swing.JLabel();
         btn_ElegirFoto = new javax.swing.JButton();
         txtobservacion = new javax.swing.JTextField();
         btn_Nuevo = new javax.swing.JButton();
@@ -79,10 +84,11 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
         jLabel21 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel25 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        txtdni = new javax.swing.JTextField();
+        btn_buscar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla_alumnos = new javax.swing.JTable();
         jTextField1 = new javax.swing.JTextField();
         btn_Buscar = new javax.swing.JButton();
 
@@ -141,6 +147,12 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("PADRE:");
 
+        txt_celulares.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_celularesActionPerformed(evt);
+            }
+        });
+
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel13.setText("DIRECCION:");
 
@@ -149,6 +161,12 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel23.setText("DNI MADRE:");
+
+        txt_dniMadre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_dniMadreActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -184,9 +202,9 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(29, 29, 29)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_celulares2, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_dniMadre, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txt_celulares, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_celulares1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txt_txtdniPadre, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(58, 58, 58))))
         );
         jPanel5Layout.setVerticalGroup(
@@ -200,7 +218,7 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txt_padre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel22)
-                        .addComponent(txt_celulares1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txt_txtdniPadre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(5, 5, 5)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -208,7 +226,7 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
                         .addComponent(jLabel9))
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel23)
-                        .addComponent(txt_celulares2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_dniMadre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txt_madre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -346,8 +364,8 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jlbl_foto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel1.add(jlbl_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 179, 190));
+        jlbl_fotoA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jPanel1.add(jlbl_fotoA, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 179, 190));
 
         btn_ElegirFoto.setText("Elegir Foto");
         jPanel1.add(btn_ElegirFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 179, 30));
@@ -381,7 +399,7 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setText("Buscar ");
+        btn_buscar.setText("Buscar ");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -419,7 +437,7 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel21)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -482,7 +500,7 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
                                     .addComponent(txt_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtdni, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel25)
-                                    .addComponent(jButton1)))
+                                    .addComponent(btn_buscar)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(76, 76, 76)
                                 .addComponent(jLabel20)))
@@ -493,7 +511,7 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
 
         jTabbedPane1.addTab("Datos", jPanel2);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_alumnos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -504,7 +522,7 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabla_alumnos);
 
         btn_Buscar.setText("Buscar");
 
@@ -531,8 +549,8 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
                     .addComponent(btn_Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(78, 78, 78))
         );
 
         jTabbedPane1.addTab("Listado", jPanel4);
@@ -580,17 +598,25 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtdniActionPerformed
 
+    private void txt_dniMadreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_dniMadreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_dniMadreActionPerformed
+
+    private void txt_celularesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_celularesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_celularesActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Buscar;
     private javax.swing.JButton btn_ElegirFoto;
-    private javax.swing.JButton btn_Eliminar;
-    private javax.swing.JButton btn_Modificar;
-    private javax.swing.JButton btn_Nuevo;
-    private javax.swing.JButton btn_Registrar;
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton btn_Eliminar;
+    public javax.swing.JButton btn_Modificar;
+    public javax.swing.JButton btn_Nuevo;
+    public javax.swing.JButton btn_Registrar;
+    public javax.swing.JButton btn_buscar;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    public javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -623,29 +649,29 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel jlbl_foto;
-    private javax.swing.JTextField txt_DIRECION;
-    public static final javax.swing.JTextField txt_apellidomaterno = new javax.swing.JTextField();
+    public javax.swing.JLabel jlbl_fotoA;
+    public javax.swing.JTable tabla_alumnos;
+    public javax.swing.JTextField txt_DIRECION;
+    public javax.swing.JTextField txt_apellidomaterno;
     private javax.swing.JTextField txt_apellidosApo;
     private javax.swing.JTextField txt_celularApo;
-    private javax.swing.JTextField txt_celulares;
-    private javax.swing.JTextField txt_celulares1;
-    private javax.swing.JTextField txt_celulares2;
-    private javax.swing.JTextField txt_consulta;
+    public javax.swing.JTextField txt_celulares;
+    public javax.swing.JTextField txt_consulta;
     private javax.swing.JTextField txt_correoApo;
-    private com.toedter.calendar.JDateChooser txt_fechanacimiento;
-    private javax.swing.JTextField txt_madre;
+    public javax.swing.JTextField txt_dniMadre;
+    public com.toedter.calendar.JDateChooser txt_fechanacimiento;
+    public javax.swing.JTextField txt_madre;
     private javax.swing.JTextField txt_nomApo;
-    private javax.swing.JTextField txt_padre;
-    private javax.swing.JTextField txt_telefono;
-    public static final javax.swing.JTextField txtalumno = new javax.swing.JTextField();
-    public static final javax.swing.JTextField txtalumno2 = new javax.swing.JTextField();
-    private javax.swing.JTextField txtcelular;
-    public static final javax.swing.JTextField txtcodigo = new javax.swing.JTextField();
-    public static final javax.swing.JTextField txtdireccion = new javax.swing.JTextField();
-    public static final javax.swing.JTextField txtdni = new javax.swing.JTextField();
+    public javax.swing.JTextField txt_padre;
+    public javax.swing.JTextField txt_telefono;
+    public javax.swing.JTextField txt_txtdniPadre;
+    public javax.swing.JTextField txtalumno;
+    public javax.swing.JTextField txtalumno2;
+    public javax.swing.JTextField txtcelular;
+    public javax.swing.JTextField txtcodigo;
+    public javax.swing.JTextField txtdireccion;
+    public javax.swing.JTextField txtdni;
     private javax.swing.JTextField txtobservacion;
     // End of variables declaration//GEN-END:variables
 
