@@ -79,7 +79,7 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
 
         jLabel1.setFont(new java.awt.Font("Traditional Arabic", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Registrar Alumnos");
+        jLabel1.setText("\"Registrar Alumnos\"");
         jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -358,7 +358,7 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
         jPanel1.add(jlbl_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 179, 190));
 
         btn_ElegirFoto.setText("Elegir Foto");
-        jPanel1.add(btn_ElegirFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 179, 30));
+        jPanel1.add(btn_ElegirFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 179, 30));
 
         txtobservacion.setEditable(false);
         jPanel1.add(txtobservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 170, 10));
@@ -436,11 +436,12 @@ public class Registrar_Alumnos extends javax.swing.JInternalFrame {
                         .addGap(46, 46, 46)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtcelular, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel2))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtcodigo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(txtcelular, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel7)
+                                        .addComponent(jLabel2)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
