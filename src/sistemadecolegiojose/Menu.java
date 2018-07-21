@@ -5,6 +5,7 @@
  */
 package sistemadecolegiojose;
 
+import Alumnos.Registrar_Alumnos;
 import Constructor.CtrListadoUser;
 import Constructor.CtrRegistrarUsuario;
 import Mconfig.FondoEscritorio;
@@ -166,6 +167,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jMenu13.setText("Registrar Alumno");
+        jMenu13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu13MouseClicked(evt);
+            }
+        });
         jMenu2.add(jMenu13);
 
         jMenu14.setText("Imprimir");
@@ -361,6 +367,13 @@ public class Menu extends javax.swing.JFrame {
         vista.show();
         vista.toFront();
     }//GEN-LAST:event_jMenu41MouseClicked
+
+    private void jMenu13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu13MouseClicked
+        Registrar_Alumnos vista=new Registrar_Alumnos();
+        Escritorio.add(vista);
+        vista.show();
+        vista.toFront();
+    }//GEN-LAST:event_jMenu13MouseClicked
 
     /**
      * @param args the command line arguments
