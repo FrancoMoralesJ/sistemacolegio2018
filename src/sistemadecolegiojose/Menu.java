@@ -8,8 +8,11 @@ package sistemadecolegiojose;
 import Alumnos.Registrar_Alumnos;
 import Constructor.CtrListadoUser;
 import Constructor.CtrRegistrarUsuario;
+import Constructor.CtrRegistroAlumnos;
 import Mconfig.FondoEscritorio;
+import Modelo.ModeloRegistrarAlumno;
 import Modelo.ModeloUsuario;
+import ModeloDao.ConsultaAlumnos;
 import ModeloDao.ConsultasUsuario;
 
 /**
@@ -369,7 +372,10 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu41MouseClicked
 
     private void jMenu13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu13MouseClicked
+        ModeloRegistrarAlumno modelo=new ModeloRegistrarAlumno();
+        ConsultaAlumnos dao=new ConsultaAlumnos();
         Registrar_Alumnos vista=new Registrar_Alumnos();
+        CtrRegistroAlumnos ct=new CtrRegistroAlumnos(modelo, dao, vista);
         Escritorio.add(vista);
         vista.show();
         vista.toFront();
