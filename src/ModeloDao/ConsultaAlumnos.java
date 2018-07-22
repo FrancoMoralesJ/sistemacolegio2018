@@ -72,7 +72,11 @@ public class ConsultaAlumnos extends Conexion {
 
     public boolean registrarAlumnos(ModeloRegistrarAlumno mod) {
         try {
-            String sql = "INSERT INTO alumnos(codigo_alumno, dni, nombrealumno, apellidopaterno, apellidomaterno, f_nacimineto, sexo, celular, direcion, encargado, foto, nombrepadre, dnipadre, nombremadre, dnimadre, telefono, correopadres, direcionpadres, dniApoderados, nombreapoderado, apellidosapoderado, correoapoderado, telefonoapoderado, sexoApo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO alumnos(codigo_alumno, dni, nombrealumno, apellidopaterno, apellidomaterno, "
+                    + "f_nacimineto, sexo, celular, direcion, encargado, "
+                    + "foto, nombrepadre, dnipadre, nombremadre, dnimadre,"
+                    + " telefono, correopadres, direcionpadres, dniApoderados, nombreapoderado, "
+                    + "apellidosapoderado, correoapoderado, telefonoapoderado, sexoApo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement ps = cn.prepareStatement(sql);
 //      
             FileInputStream foto = null;
@@ -104,6 +108,7 @@ public class ConsultaAlumnos extends Conexion {
             ps.setString(22, mod.getCorreoapoderado());
             ps.setString(23, mod.getTelefonoapoderado());
             ps.setString(24, mod.getSexoA());
+            
             int r = ps.executeUpdate();
             if (r > 0) {
                 JOptionPane.showMessageDialog(null, "Se Registro  Correctamento ");
