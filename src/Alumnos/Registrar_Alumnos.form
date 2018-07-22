@@ -411,8 +411,8 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="txt_madre" pref="232" max="32767" attributes="0"/>
-                                          <Component id="txt_padre" max="32767" attributes="0"/>
+                                          <Component id="txt_nombremadre" pref="232" max="32767" attributes="0"/>
+                                          <Component id="txt_padrenombre" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -437,8 +437,8 @@
                                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="txt_dniMadre" min="-2" pref="226" max="-2" attributes="0"/>
-                                                  <Component id="txt_celulares" min="-2" pref="226" max="-2" attributes="0"/>
-                                                  <Component id="txt_txtdniPadre" alignment="0" min="-2" pref="226" max="-2" attributes="0"/>
+                                                  <Component id="txt_correopadres" min="-2" pref="226" max="-2" attributes="0"/>
+                                                  <Component id="txt_dniPadre" alignment="0" min="-2" pref="226" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -458,9 +458,9 @@
                                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="txt_padre" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="txt_padrenombre" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                                       <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txt_txtdniPadre" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="txt_dniPadre" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
@@ -472,7 +472,7 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txt_dniMadre" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                                      <Component id="txt_madre" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="txt_nombremadre" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -486,7 +486,7 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="txt_celulares" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="txt_correopadres" min="-2" pref="25" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -532,12 +532,12 @@
                         <Property name="text" type="java.lang.String" value="PADRE:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txt_padre">
+                    <Component class="javax.swing.JTextField" name="txt_padrenombre">
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                       </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txt_madre">
+                    <Component class="javax.swing.JTextField" name="txt_nombremadre">
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                       </AuxValues>
@@ -547,9 +547,9 @@
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                       </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txt_celulares">
+                    <Component class="javax.swing.JTextField" name="txt_correopadres">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_celularesActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_correopadresActionPerformed"/>
                       </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -576,7 +576,7 @@
                         <Property name="text" type="java.lang.String" value="DNI PADRE:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txt_txtdniPadre">
+                    <Component class="javax.swing.JTextField" name="txt_dniPadre">
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                       </AuxValues>
@@ -712,12 +712,24 @@
                   </Layout>
                   <SubComponents>
                     <Component class="javax.swing.JTextField" name="txt_nomApo">
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txt_apellidosApo">
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txt_correoApo">
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txt_celularApodera">
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel14">
                       <Properties>
@@ -787,6 +799,7 @@
                       </Properties>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                       </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel24">
@@ -806,6 +819,9 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txt_dniApoderado">
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -883,10 +899,13 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtobservacion">
+                <Component class="javax.swing.JTextField" name="txt_rutaImagenA">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="10" y="230" width="20" height="10"/>
@@ -1017,6 +1036,7 @@
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
           </SubComponents>
