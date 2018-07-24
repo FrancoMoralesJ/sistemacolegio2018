@@ -28,84 +28,104 @@ public class RegistrarDocentes extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        txtdni = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtdocente = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        txtdireccion = new javax.swing.JTextField();
+        txttelefono = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtestado = new javax.swing.JComboBox<>();
         txtespecialidad = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txtcargo = new javax.swing.JTextField();
         txtexperiencia = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txtnacimiento = new javax.swing.JTextField();
-        txtpago = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        txtingreso = new javax.swing.JTextField();
+        txtcargo = new javax.swing.JComboBox<>();
+        txtnacimiento = new com.toedter.calendar.JDateChooser();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         txtobservacion = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        consultar = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtblDatos = new javax.swing.JTable();
-        jlbl_foto = new javax.swing.JLabel();
+        txt_pago = new javax.swing.JTextField();
         btn_Cargar = new javax.swing.JButton();
+        lbl_fotodoce = new javax.swing.JLabel();
+        txt_rutaIMG = new javax.swing.JTextField();
         btn_Buscar = new javax.swing.JButton();
+        txt_consultar = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         btn_Nuevo = new javax.swing.JButton();
         btn_Registrar = new javax.swing.JButton();
         btn_Modificar = new javax.swing.JButton();
         btn_Eliminar = new javax.swing.JButton();
         btn_Salir = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtblDatosProfesores = new javax.swing.JTable();
 
+        setClosable(true);
+        setIconifiable(true);
+        setResizable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Traditional Arabic", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("DOCENTE");
         jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 34));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 50));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos"));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Aharoni", 1, 12)); // NOI18N
         jLabel2.setText("DNI :");
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 28, -1, -1));
 
         txtdni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtdniActionPerformed(evt);
             }
         });
+        jPanel4.add(txtdni, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 27, 150, 26));
 
         jLabel3.setFont(new java.awt.Font("Aharoni", 1, 12)); // NOI18N
         jLabel3.setText("DOCENTE :");
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 59, -1, 14));
+        jPanel4.add(txtdocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 58, 150, 26));
 
         jLabel4.setFont(new java.awt.Font("Aharoni", 1, 12)); // NOI18N
         jLabel4.setText("DIRECCION :");
+        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
         txtdireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtdireccionActionPerformed(evt);
             }
         });
+        jPanel4.add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 150, 26));
 
         txttelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txttelefonoActionPerformed(evt);
             }
         });
+        jPanel4.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 150, 26));
 
         jLabel6.setFont(new java.awt.Font("Aharoni", 1, 12)); // NOI18N
         jLabel6.setText("TELEFONO :");
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Aharoni", 1, 12)); // NOI18N
         jLabel5.setText("ESTADO CIVIL :");
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
         txtestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SOLTERO", "CASADO", "DIVORCIADO" }));
         txtestado.addActionListener(new java.awt.event.ActionListener() {
@@ -113,176 +133,58 @@ public class RegistrarDocentes extends javax.swing.JInternalFrame {
                 txtestadoActionPerformed(evt);
             }
         });
+        jPanel4.add(txtestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 150, 26));
 
         txtespecialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CIENCIAS", "LETRAS" }));
+        jPanel4.add(txtespecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 190, 26));
 
         jLabel7.setFont(new java.awt.Font("Aharoni", 1, 12)); // NOI18N
-        jLabel7.setText("ESPECIALIDAD :");
+        jLabel7.setText("OBSERVACION:");
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Aharoni", 1, 12)); // NOI18N
         jLabel8.setText("CARGO :");
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, -1));
+        jPanel4.add(txtexperiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 192, 27));
 
         jLabel9.setFont(new java.awt.Font("Aharoni", 1, 12)); // NOI18N
         jLabel9.setText("EXPERIENCIA :");
+        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Aharoni", 1, 12)); // NOI18N
         jLabel10.setText("F/NACIMIENTO :");
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Aharoni", 1, 12)); // NOI18N
         jLabel11.setText("PAGO :");
+        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 40, -1));
+
+        txtcargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PROFESOR", "DIRECTOR" }));
+        jPanel4.add(txtcargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, 190, 20));
+
+        txtnacimiento.setVerifyInputWhenFocusTarget(false);
+        jPanel4.add(txtnacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 190, 26));
 
         jLabel12.setFont(new java.awt.Font("Aharoni", 1, 12)); // NOI18N
-        jLabel12.setText("FECHA/INGRESO :");
+        jLabel12.setText("ESPECIALIDAD :");
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, -1, -1));
+        jPanel4.add(txtobservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 190, 30));
+        jPanel4.add(txt_pago, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, 190, 27));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtdni, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtdocente, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel7)
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addGap(19, 19, 19)
-                                    .addComponent(jLabel6))
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtespecialidad, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtestado, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(26, 26, 26))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(63, 63, 63)
-                            .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(1, 1, 1))))
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtnacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtcargo, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtexperiencia, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtpago, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtingreso, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(113, 113, 113))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtdni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtdocente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(txtestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(14, 14, 14)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(txtespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(txtcargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(txtexperiencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(txtnacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(txtpago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtingreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12))))
-                .addGap(0, 6, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 623, -1));
-
-        jLabel13.setFont(new java.awt.Font("Aharoni", 1, 12)); // NOI18N
-        jLabel13.setText("RUTA IMG:");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 379, -1, -1));
-
-        txtobservacion.setEditable(false);
-        getContentPane().add(txtobservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 378, 547, -1));
-
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel15.setText("BUSCAR DOCENTE");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 405, -1, -1));
-        getContentPane().add(consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 405, 231, -1));
-
-        jtblDatos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jtblDatos);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 456, 811, 171));
-
-        jlbl_foto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(jlbl_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 180, 136, 146));
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 623, 240));
 
         btn_Cargar.setText("Elegir Foto");
-        getContentPane().add(btn_Cargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 330, 118, -1));
+        jPanel2.add(btn_Cargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 330, 190, 50));
 
-        btn_Buscar.setText("Buscar");
-        getContentPane().add(btn_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(449, 401, 104, 52));
+        lbl_fotodoce.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel2.add(lbl_fotodoce, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 90, 190, 220));
+
+        txt_rutaIMG.setEditable(false);
+        jPanel2.add(txt_rutaIMG, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, 190, -1));
+
+        btn_Buscar.setText("BUSCAR DOCENTE");
+        jPanel2.add(btn_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 180, 40));
+        jPanel2.add(txt_consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 430, 40));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -302,7 +204,43 @@ public class RegistrarDocentes extends javax.swing.JInternalFrame {
         btn_Salir.setText("Salir");
         jPanel1.add(btn_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 95, 47));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 700, 70));
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 620, 70));
+
+        jTabbedPane1.addTab("INGRESAR DATOS", jPanel2);
+
+        jtblDatosProfesores.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jtblDatosProfesores);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 895, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("LISTAR DATOS", jPanel3);
+
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 920, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -326,19 +264,16 @@ public class RegistrarDocentes extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Buscar;
-    private javax.swing.JButton btn_Cargar;
-    private javax.swing.JButton btn_Eliminar;
-    private javax.swing.JButton btn_Modificar;
-    private javax.swing.JButton btn_Nuevo;
-    private javax.swing.JButton btn_Registrar;
-    private javax.swing.JButton btn_Salir;
-    private javax.swing.JTextField consultar;
+    public javax.swing.JButton btn_Cargar;
+    public javax.swing.JButton btn_Eliminar;
+    public javax.swing.JButton btn_Modificar;
+    public javax.swing.JButton btn_Nuevo;
+    public javax.swing.JButton btn_Registrar;
+    public javax.swing.JButton btn_Salir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -348,21 +283,25 @@ public class RegistrarDocentes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel jlbl_foto;
-    private javax.swing.JTable jtblDatos;
-    private javax.swing.JTextField txtcargo;
-    public static final javax.swing.JTextField txtdireccion = new javax.swing.JTextField();
-    public static final javax.swing.JTextField txtdni = new javax.swing.JTextField();
-    private javax.swing.JTextField txtdocente;
-    private javax.swing.JComboBox<String> txtespecialidad;
-    private javax.swing.JComboBox<String> txtestado;
-    private javax.swing.JTextField txtexperiencia;
-    private javax.swing.JTextField txtingreso;
-    private javax.swing.JTextField txtnacimiento;
-    private javax.swing.JTextField txtobservacion;
-    private javax.swing.JTextField txtpago;
-    public static final javax.swing.JTextField txttelefono = new javax.swing.JTextField();
+    private javax.swing.JTabbedPane jTabbedPane1;
+    public javax.swing.JTable jtblDatosProfesores;
+    public javax.swing.JLabel lbl_fotodoce;
+    public javax.swing.JTextField txt_consultar;
+    public javax.swing.JTextField txt_pago;
+    public javax.swing.JTextField txt_rutaIMG;
+    public javax.swing.JComboBox<String> txtcargo;
+    public javax.swing.JTextField txtdireccion;
+    public javax.swing.JTextField txtdni;
+    public javax.swing.JTextField txtdocente;
+    public javax.swing.JComboBox<String> txtespecialidad;
+    public javax.swing.JComboBox<String> txtestado;
+    public javax.swing.JTextField txtexperiencia;
+    public com.toedter.calendar.JDateChooser txtnacimiento;
+    public javax.swing.JTextField txtobservacion;
+    public javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables
 }

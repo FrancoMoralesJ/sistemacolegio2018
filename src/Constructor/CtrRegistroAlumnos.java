@@ -6,19 +6,26 @@ import ModeloDao.ConsultaAlumnos;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
-public class CtrRegistroAlumnos implements ActionListener {
+public class CtrRegistroAlumnos implements ActionListener, KeyListener {
 
     private ModeloRegistrarAlumno modelo;
     private ConsultaAlumnos dao;
     private Registrar_Alumnos vista;
-    private FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivo de Imagen", "jpg");
+    private FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivo de Imagen", "jpg", "png", "jpeg", "pdf");
     private String rutaimagen;
 
     public CtrRegistroAlumnos(ModeloRegistrarAlumno modelo, ConsultaAlumnos dao, Registrar_Alumnos vista) {
@@ -29,6 +36,7 @@ public class CtrRegistroAlumnos implements ActionListener {
         this.vista.btn_Registrar.addActionListener(this);
         this.vista.btn_Modificar.addActionListener(this);
         this.vista.btn_Eliminar.addActionListener(this);
+        this.vista.txt_buscarpornombre.addKeyListener(this);
         this.vista.btn_buscar.addActionListener(this);
         this.vista.btn_ElegirFoto.addActionListener(this);
         iniciarVentanaRegistrarAlumnos();
@@ -66,7 +74,7 @@ public class CtrRegistroAlumnos implements ActionListener {
                 String fil = dlg.getSelectedFile().getPath();
                 //optenesmos la direcion de donde se gaurdo la imagen XD
                 String file = dlg.getSelectedFile().toString();
-                vista.jlbl_fotoA.setIcon(new ImageIcon(fil));
+                vista.lbl_fotoA.setIcon(new ImageIcon(fil));
                 //modificamos la iamgen
                 ImageIcon icon = new ImageIcon(fil);
                 //extraemos la iamgen del icono del fil XD 
@@ -75,8 +83,8 @@ public class CtrRegistroAlumnos implements ActionListener {
                 Image nuevoimg = img.getScaledInstance(190, 200, java.awt.Image.SCALE_SMOOTH);
                 //la nueva imagen modificado 
                 ImageIcon icononuevo = new ImageIcon(nuevoimg);
-                vista.jlbl_fotoA.setIcon(icononuevo);
-                vista.jlbl_fotoA.setSize(190, 200);
+                vista.lbl_fotoA.setIcon(icononuevo);
+                vista.lbl_fotoA.setSize(190, 200);
                 vista.txt_rutaImagenA.setText(fil);
                 rutaimagen = "";
 
@@ -87,19 +95,18 @@ public class CtrRegistroAlumnos implements ActionListener {
         }
         if (e.getSource() == vista.btn_Registrar) {
 
-            if (vista.txt_codigoA.getText().isEmpty() == false
-                    || vista.txt_dniA.getText().isEmpty() == false
-                    || vista.txt_nomalumnoA.getText().isEmpty() == false
-                    || vista.txt_apellidopaternoA.getText().isEmpty() == false
-                    || vista.txt_apellidomaternoA.getText().isEmpty() == false
-                    || vista.txt_fechanacimiento.getDate().toString().isEmpty() == false
-                   
-                    || vista.txt_celularA.getText().isEmpty() == false
-                  
-                    || vista.txt_direccionA.getText().isEmpty() == false
-                    || vista.txt_celularA.getText().isEmpty() == false
-                    || vista.txt_rutaImagenA.getText().isEmpty() == false) {
+            if (vista.txt_codigoA.getText().isEmpty() == true
+                    || vista.txt_dniA.getText().isEmpty() == true
+                    || vista.txt_nomalumnoA.getText().isEmpty() == true
+                    || vista.txt_apellidopaternoA.getText().isEmpty() == true
+                    || vista.txt_apellidomaternoA.getText().isEmpty() == true
+                    || vista.txt_fechanacimiento.getDate().toString().isEmpty() == true
+                    || vista.txt_celularA.getText().isEmpty() == true
+                    || vista.txt_direccionA.getText().isEmpty() == true
+                    || vista.txt_celularA.getText().isEmpty() == true
+                    || vista.txt_rutaImagenA.getText().isEmpty() == true) {
                 JOptionPane.showMessageDialog(null, "Estos Campos son Obligatorio Llenar");
+
             } else {
 
                 modelo.setCodigoA(vista.txt_codigoA.getText());
@@ -132,10 +139,10 @@ public class CtrRegistroAlumnos implements ActionListener {
                 modelo.setCorreoapoderado(vista.txt_correoApo.getText());
                 modelo.setTelefonoapoderado(vista.txt_celularApodera.getText());
                 modelo.setSexoapoderado(vista.jcbx_sexoApoderado.getSelectedItem().toString());
-                limpiarTabla();
-                mostrar();
-                if (dao.registrarAlumnos(modelo)) {
 
+                if (dao.registrarAlumnos(modelo)) {
+                    limpiarTabla();
+                    mostrar();
                 }
             }
 
@@ -143,13 +150,149 @@ public class CtrRegistroAlumnos implements ActionListener {
 
         if (e.getSource() == vista.btn_Modificar) {
 
-        }
-        if (e.getSource() == vista.btn_Eliminar) {
+            if (vista.txt_codigoA.getText().isEmpty() == true
+                    || vista.txt_dniA.getText().isEmpty() == true
+                    || vista.txt_nomalumnoA.getText().isEmpty() == true
+                    || vista.txt_apellidopaternoA.getText().isEmpty() == true
+                    || vista.txt_apellidomaternoA.getText().isEmpty() == true
+                    || vista.txt_fechanacimiento.getDate().toString().isEmpty() == true
+                    || vista.txt_celularA.getText().isEmpty() == true
+                    || vista.txt_direccionA.getText().isEmpty() == true
+                    || vista.txt_celularA.getText().isEmpty() == true
+                    || vista.txt_rutaImagenA.getText().isEmpty() == true) {
+                JOptionPane.showMessageDialog(null, "Estos Campos son Obligatorio Llenar");
+
+            } else {
+
+                modelo.setCodigoA(vista.txt_codigoA.getText());
+                modelo.setDniA(vista.txt_dniA.getText());
+                modelo.setNombreA(vista.txt_nomalumnoA.getText());
+                modelo.setApellidipaternoA(vista.txt_apellidopaternoA.getText());
+                modelo.setApellidomaternoA(vista.txt_apellidomaternoA.getText());
+                SimpleDateFormat fechaN = new SimpleDateFormat("yyyy-MM-dd");
+                modelo.setFechanacimientoA(fechaN.format(vista.txt_fechanacimiento.getDate()));
+
+                modelo.setSexoA(vista.jcbx_sexoAlumno.getSelectedItem().toString());
+                modelo.setCelularA(vista.txt_celularA.getText());
+                modelo.setDireccionA(vista.txt_direccionA.getText());
+                modelo.setEncargadoA(vista.jcbx_encargadoA.getSelectedItem().toString());
+                modelo.setFotoRutaA(vista.txt_rutaImagenA.getText());
+
+//          
+                modelo.setNombrepadre(vista.txt_padrenombre.getText());
+                modelo.setDnipadre(vista.txt_dniPadre.getText());
+                modelo.setNombremadre(vista.txt_nombremadre.getText());
+                modelo.setDnimadre(vista.txt_dniMadre.getText());
+                modelo.setTelefonos(vista.txt_telefono.getText());
+                modelo.setCorreospadrees(vista.txt_correopadres.getText());
+                modelo.setDireccionpadres(vista.txt_DIRECION.getText());
+
+//        
+                modelo.setDniapoderado(vista.txt_dniApoderado.getText());
+                modelo.setNombreapoderado(vista.txt_nomApo.getText());
+                modelo.setApellidosapoderado(vista.txt_apellidosApo.getText());
+                modelo.setCorreoapoderado(vista.txt_correoApo.getText());
+                modelo.setTelefonoapoderado(vista.txt_celularApodera.getText());
+                modelo.setSexoapoderado(vista.jcbx_sexoApoderado.getSelectedItem().toString());
+
+                if (dao.modificarAlumnos(modelo)) {
+                    limpiarTabla();
+                    mostrar();
+                }
+            }
 
         }
         if (e.getSource() == vista.btn_buscar) {
+            String dni=vista.txt_consulta.getText();
+            
+            if(dni.length()>0){
+              modelo.setDniA(dni);
+            
+            if (dao.buscarAlumnosPordni(vista.tabla_alumnos, modelo)) {
+                vista.txt_codigoA.setText(modelo.getCodigoA());
+                vista.txt_dniA.setText(modelo.getDniA());
+                vista.txt_nomalumnoA.setText(modelo.getNombreA());
+                vista.txt_apellidopaternoA.setText(modelo.getApellidipaternoA());
+                vista.txt_apellidomaternoA.setText(modelo.getApellidomaternoA());
+                
+                  try {
+                      Date f=new SimpleDateFormat("yyyy-MM-dd").parse(modelo.getFechanacimientoA().toString());
+                      vista.txt_fechanacimiento.setDate(f);
+                  } catch (ParseException ex) {
+                      
+                  }
+                
+                 vista.jcbx_sexoAlumno.setSelectedItem(modelo.getSexoA());
+                 vista.txt_celularA.setText(modelo.getCelularA());
+                 vista.txt_direccionA.setText(modelo.getDireccionA());
+                 vista.jcbx_encargadoA.setSelectedItem(modelo.getEncargadoA());
+                 vista.lbl_fotoA.setIcon(modelo.getFoto());
+                 
+  
+                vista.txt_dniPadre.setText(modelo.getDnipadre());
+                vista.txt_padrenombre.setText(modelo.getNombrepadre());
+                vista.txt_dniMadre.setText(modelo.getDnimadre());
+                vista.txt_telefono.setText(modelo.getTelefonos());
+                vista.txt_correopadres.setText(modelo.getCorreospadrees());
+                vista.txt_DIRECION.setText(modelo.getDireccionpadres());
+                
+//                  private String dniapoderado;
+//    private String nombreapoderado;
+//    private String apellidosapoderado;
+//    private String correoapoderado;
+//    private String telefonoapoderado;
+//    private String sexoapoderado;
+
+                vista.txt_dniApoderado.setText(modelo.getDniapoderado());
+                vista.txt_nomApo.setText(modelo.getNombreapoderado());
+                vista.txt_apellidosApo.setText(modelo.getApellidosapoderado());
+                vista.txt_correoApo.setText(modelo.getCorreoapoderado());
+                vista.txt_celularApodera.setText(modelo.getTelefonoapoderado());
+                vista.jcbx_sexoApoderado.setSelectedItem(modelo.getSexoapoderado());
+                 
+                 
+                
+                
+            }  
+            }else{
+                 JOptionPane.showMessageDialog(null, "Esta vacio");
+                 
+            }
+            
 
         }
+        
+        
 
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        if (e.getSource() == vista.txt_buscarpornombre) {
+            String user = vista.txt_buscarpornombre.getText();
+        
+            if (user.length() > 0) {
+                modelo.setNombreA(user);
+                limpiarTabla();
+                if (dao.buscarAlumnos(vista.tabla_alumnos, modelo)) {
+
+                }
+            } else {
+             
+                limpiarTabla();
+                mostrar();
+            }
+
+        }
     }
 }

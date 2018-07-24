@@ -12,8 +12,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -21,7 +19,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import sistemadecolegiojose.Menu;
-import sistemadecolegiojose.RegistrarUsuario;
 
 public class ConsultasUsuario extends Conexion {
 
@@ -86,9 +83,8 @@ public class ConsultasUsuario extends Conexion {
 
     public boolean Bucar(ModeloUsuario modelo) {
 
-
         try {
-     
+
             String sql = "SELECT * FROM usuario WHERE userr='" + modelo.getUsario() + "'";
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -101,7 +97,7 @@ public class ConsultasUsuario extends Conexion {
                 String con = rs.getString("pass");
                 String tp = rs.getString("tipo_usuario");
                 Blob blob = rs.getBlob("foto");
-            
+
                 if (blob != null) {
                     byte[] img = blob.getBytes(1, (int) blob.length());
                     BufferedImage foto = null;
@@ -109,20 +105,20 @@ public class ConsultasUsuario extends Conexion {
                         foto = ImageIO.read(new ByteArrayInputStream(img));
                     } catch (Exception e) {
                     }
-                      ImageIcon foto1 = new ImageIcon(foto.getScaledInstance(190, 200, 0));
-                     modelo.setFotos(foto1);
+                    ImageIcon foto1 = new ImageIcon(foto.getScaledInstance(190, 200, 0));
+                    modelo.setFotos(foto1);
                 }
                 modelo.setCodigo(id);
                 modelo.setUsario(nom);
                 modelo.setCorreo(corre);
                 modelo.setContrase(con);
                 modelo.setTido_usuario(tp);
-               
-               JOptionPane.showMessageDialog(null, "tipo de user "+tp);
+
+                JOptionPane.showMessageDialog(null, "tipo de user " + tp);
                 return true;
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Eror-->"+e);
+            JOptionPane.showMessageDialog(null, "Eror-->" + e);
         }
         return false;
     }

@@ -58,6 +58,7 @@ public class ConsultaAlumnos extends Conexion {
                     ImageIcon icon = new ImageIcon(img.getScaledInstance(50, 70, 0));
                     comulna[11] = new JLabel(icon);
                 }
+                tabla.setRowHeight(70);
                 modelo.addRow(comulna);
 
             }
@@ -68,6 +69,118 @@ public class ConsultaAlumnos extends Conexion {
         }
         tabla.setModel(modelo);
         tabla.getRowHeight(50);
+    }
+
+    public boolean buscarAlumnos(JTable tabla, ModeloRegistrarAlumno mod) {
+
+        String sql = "SELECT codigo_alumno ,dni, nombrealumno, apellidopaterno, apellidomaterno, f_nacimineto, sexo,celular, direcion,fecha_registoAlumno, encargado, foto "
+                + "FROM alumnos WHERE  CONCAT(nombrealumno)  LIKE '%" + mod.getNombreA() + "%'";
+        tabla.setDefaultRenderer(Object.class, new RenderTable());
+        Object[] comulna = new Object[13];
+        try {
+            Statement ps = cn.createStatement();
+            ResultSet rs = ps.executeQuery(sql);
+            while (rs.next()) {
+                comulna[0] = rs.getString(1);
+                comulna[1] = rs.getString(2);
+                comulna[2] = rs.getString(3);
+                comulna[3] = rs.getString(4);
+                comulna[4] = rs.getString(5);
+                comulna[5] = rs.getString(6);
+                comulna[6] = rs.getString(7);
+                comulna[7] = rs.getString(8);
+                comulna[8] = rs.getString(9);
+                comulna[9] = rs.getTimestamp(10);
+                comulna[10] = rs.getString(11);
+                Blob blob = rs.getBlob(12);
+                if (blob != null) {
+                    byte[] foto = blob.getBytes(1, (int) blob.length());
+                    BufferedImage img = null;
+                    try {
+                        img = ImageIO.read(new ByteArrayInputStream(foto));
+
+                    } catch (Exception e) {
+                        comulna[11] = "No hya imagen";
+                    }
+                    ImageIcon icon = new ImageIcon(img.getScaledInstance(50, 70, 0));
+                    comulna[11] = new JLabel(icon);
+                }
+                tabla.setRowHeight(70);
+                modelo.addRow(comulna);
+                return true;
+            }
+
+        } catch (Exception e) {
+            comulna[11] = "No hya imagen";
+            JOptionPane.showMessageDialog(null, "Error al mostrar -->" + e);
+        }
+        tabla.setModel(modelo);
+        tabla.getRowHeight(50);
+        return false;
+    }
+
+    public boolean buscarAlumnosPordni(JTable tabla, ModeloRegistrarAlumno mod) {
+
+        String sql = "SELECT  * FROM alumnos  WHERE  dni= '" + mod.getDniA() + "' ";
+        tabla.setDefaultRenderer(Object.class, new RenderTable());
+        Object[] comulna = new Object[13];
+        try {
+            Statement ps = cn.createStatement();
+            ResultSet rs = ps.executeQuery(sql);
+            while (rs.next()) {
+                mod.setCodigoA(rs.getString("codigo_alumno"));
+                mod.setDniA(rs.getString("dni"));
+                mod.setNombreA(rs.getString("nombrealumno"));
+                mod.setApellidipaternoA(rs.getString("apellidopaterno"));
+                mod.setApellidomaternoA(rs.getString("apellidomaterno"));
+                mod.setFechanacimientoA(rs.getString("f_nacimineto"));
+                mod.setSexoA(rs.getString("sexo"));
+                mod.setCelularA(rs.getString("celular"));
+                mod.setDireccionA(rs.getString("direcion"));
+                mod.setEncargadoA(rs.getString("encargado"));
+
+                Blob blob = rs.getBlob("foto");
+                if (blob != null) {
+                    byte[] foto = blob.getBytes(1, (int) blob.length());
+                    BufferedImage img = null;
+                    try {
+                        img = ImageIO.read(new ByteArrayInputStream(foto));
+
+                    } catch (Exception e) {
+                        comulna[11] = "No hya imagen";
+                    }
+                    ImageIcon icon = new ImageIcon(img.getScaledInstance(179, 190, 0));
+                    mod.setFoto(icon);
+                }
+
+                mod.setNombrepadre(rs.getString("nombrepadre"));
+                mod.setDnipadre(rs.getString("dnipadre"));
+                mod.setNombremadre(rs.getString("nombremadre"));
+                mod.setDnimadre(rs.getString("dnimadre"));
+                mod.setTelefonos(rs.getString("telefono"));
+                mod.setCorreospadrees(rs.getString("correopadres"));
+                mod.setDireccionpadres(rs.getString("direcionpadres"));
+
+//                 
+                mod.setDniapoderado(rs.getString("dniApoderados"));
+                mod.setNombreapoderado(rs.getString("nombreapoderado"));
+                mod.setApellidosapoderado(rs.getString("apellidosapoderado"));
+                mod.setCorreoapoderado(rs.getString("correoapoderado"));
+                mod.setTelefonoapoderado(rs.getString("telefonoapoderado"));
+                mod.setSexoapoderado(rs.getString("sexoApo"));
+
+                tabla.setRowHeight(70);
+                modelo.addRow(comulna);
+                return true;
+            }
+
+        } catch (Exception e) {
+            comulna[11] = "No hya imagen";
+            JOptionPane.showMessageDialog(null, "Error al mostrar -->" + e);
+        }
+        tabla.setModel(modelo);
+        tabla.getRowHeight(50);
+        return false;
     }
 
     public boolean registrarAlumnos(ModeloRegistrarAlumno mod) {
@@ -108,7 +221,7 @@ public class ConsultaAlumnos extends Conexion {
             ps.setString(22, mod.getCorreoapoderado());
             ps.setString(23, mod.getTelefonoapoderado());
             ps.setString(24, mod.getSexoA());
-            
+
             int r = ps.executeUpdate();
             if (r > 0) {
                 JOptionPane.showMessageDialog(null, "Se Registro  Correctamento ");
@@ -128,12 +241,11 @@ public class ConsultaAlumnos extends Conexion {
                     + "encargado=?,foto=?,nombrepadre=?,dnipadre=?,"
                     + "nombremadre=?,dnimadre=?,telefono=?,correopadres=?,direcionpadres=?,"
                     + "dniApoderados=?,nombreapoderado=?,apellidosapoderado=?,correoapoderado=?"
-                    + ",telefonoapoderado=?,sexoApo=? WHERE codigo_alumno=?";
+                    + ",telefonoapoderado=?,sexoApo=? WHERE codigo_alumno='" + mod.getCodigoA() + "'";
             PreparedStatement ps = cn.prepareStatement(sql);
 //      
             FileInputStream foto = null;
 
-           
             ps.setString(1, mod.getDniA());
             ps.setString(2, mod.getNombreA());
             ps.setString(3, mod.getApellidipaternoA());
@@ -160,11 +272,10 @@ public class ConsultaAlumnos extends Conexion {
             ps.setString(21, mod.getCorreoapoderado());
             ps.setString(22, mod.getTelefonoapoderado());
             ps.setString(23, mod.getSexoA());
-            
-            ps.setString(23, mod.getCodigoA());
+
             int r = ps.executeUpdate();
             if (r > 0) {
-                JOptionPane.showMessageDialog(null, "Se Registro  Correctamento ");
+                JOptionPane.showMessageDialog(null, "Se Actualizo  Correctamento  El Alumno \n" + mod.getNombreA());
             }
             return true;
         } catch (Exception e) {
@@ -173,20 +284,24 @@ public class ConsultaAlumnos extends Conexion {
 
         return false;
     }
-      public boolean eliminarAlumnos(ModeloRegistrarAlumno mod) {
-          try {
-               PreparedStatement ps = cn.prepareStatement("DELETE FROM alumnos WHERE codigo_alumno=?");
-               ps.setString(1,mod.getCodigoA());
-              int r= ps.executeUpdate();
-              if(r>0){
-                  JOptionPane.showMessageDialog(null, "Se Elimino Correctamente");
-              }
-          } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Error en el codigo=>\n"+e);
-          }
-               
-          
-          return false;
-          
-      }
+
+    public boolean eliminarAlumnos(ModeloRegistrarAlumno mod) {
+        try {
+            int p = JOptionPane.showConfirmDialog(null, "Sesea eliminar", "Alerta", 0);
+            if (p == 0) {
+
+                PreparedStatement ps = cn.prepareStatement("DELETE FROM alumnos WHERE codigo_alumno='" + mod.getCodigoA() + "'");
+
+                int r = ps.executeUpdate();
+                if (r > 0) {
+                    JOptionPane.showMessageDialog(null, "Se Elimino Correctamente el alumno \n" + mod.getCodigoA());
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error en el codigo=>\n" + e);
+        }
+
+        return false;
+
+    }
 }
