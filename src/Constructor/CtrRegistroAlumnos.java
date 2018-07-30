@@ -219,7 +219,7 @@ public class CtrRegistroAlumnos implements ActionListener, KeyListener {
                       Date f=new SimpleDateFormat("yyyy-MM-dd").parse(modelo.getFechanacimientoA().toString());
                       vista.txt_fechanacimiento.setDate(f);
                   } catch (ParseException ex) {
-                      
+                      JOptionPane.showMessageDialog(null, "Error Fehca ->"+ex);
                   }
                 
                  vista.jcbx_sexoAlumno.setSelectedItem(modelo.getSexoA());

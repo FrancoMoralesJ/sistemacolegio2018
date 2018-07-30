@@ -28,6 +28,7 @@ import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
+
 /**
  *
  * @author PC
@@ -35,7 +36,7 @@ import javax.swing.Timer;
 public class Menu extends javax.swing.JFrame {
 
     Timer timer;
-
+    
     public Menu() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
@@ -564,7 +565,10 @@ public class Menu extends javax.swing.JFrame {
        ConsultaDocentes dao=new ConsultaDocentes();
        RegistrarDocentes vista=new RegistrarDocentes();
        CtrRegistroProfesores ct=new CtrRegistroProfesores(modelo, dao, vista);
+       
        Escritorio.add(vista);
+       vista.setLocation(Escritorio.getWidth() / 2 - vista.getWidth() / 2,
+                Escritorio.getHeight() / 2 - vista.getHeight() / 2);
        vista.show();
        vista.toFront();
     }//GEN-LAST:event_jMenu39MouseClicked

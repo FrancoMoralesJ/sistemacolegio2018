@@ -9,10 +9,12 @@ public class Conexion {
 //    private static String url = "jdbc:mysql://localhost/";
     private static String driver = "com.mysql.jdbc.Driver";
     private static String database = "matricula_notas";
-    private static String user = "root";
-    private static String pasword = "";
+    private static String user = "francosistemas";
+    private static String pasword = "RPCGFdB7BxoGcsBw";
 ////    private static String url = "jdbc:mysql://192.168.1.39:3306/sistema_colegio?user=franco&password=199728&useUnicode=true&characterEncoding=UTF-8";
-   private static String url = "jdbc:mysql://localhost/"+database;
+//   private static String url = "jdbc:mysql://localhost/"+database;
+       private static String url = "jdbc:mysql://190.232.161.175:3306/"+database;
+
     public static Connection con ;
 
     public Conexion() {//jdbc:mysql://localhost/" + dbName + "?user=" + dbUserName + "&password=" + dbPassword + "&useUnicode=true&characterEncoding=UTF-8
