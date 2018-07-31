@@ -20,12 +20,15 @@ public class CtrRegistrarfichas implements ActionListener {
         
     }
     
+    
     @Override
     public void actionPerformed(ActionEvent e) {
      if (e.getSource()==vista.btn_Registrar){
         JOptionPane.showMessageDialog(null,"se reguistro");
     }
-    
+     if (e.getSource()==vista.btn_Registrar){
+        JOptionPane.showMessageDialog(null,"se reguistrosss");
+    }
     
     
         
