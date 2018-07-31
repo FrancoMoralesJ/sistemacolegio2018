@@ -11,11 +11,10 @@ package FichaMatricula;
  */
 public class Registro_Fichas extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form Registro_Fichas
-     */
+
     public Registro_Fichas() {
         initComponents();
+        
     }
 
     /**
@@ -36,7 +35,7 @@ public class Registro_Fichas extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        btn_Buscar = new javax.swing.JButton();
+        txtfecha = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -44,6 +43,7 @@ public class Registro_Fichas extends javax.swing.JInternalFrame {
         btn_Eliminar = new javax.swing.JButton();
         btn_Registrar = new javax.swing.JButton();
         btn_Modificar = new javax.swing.JButton();
+        btn_Buscar = new javax.swing.JButton();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -53,22 +53,22 @@ public class Registro_Fichas extends javax.swing.JInternalFrame {
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("ALUMNO");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setText("BUSCAR ALUMNO");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
-        getContentPane().add(txtconsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 343, -1));
-        getContentPane().add(txtalumno, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 190, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 110, -1));
+        getContentPane().add(txtconsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 260, 30));
+        getContentPane().add(txtalumno, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 230, 30));
 
         txtcodigo.setEditable(false);
-        getContentPane().add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 231, -1));
+        getContentPane().add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 230, 30));
 
         jLabel7.setFont(new java.awt.Font("Traditional Arabic", 1, 24)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("FICHA/MATRICULA");
         jLabel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 731, 34));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 640, 34));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setText("SEMESTRE");
@@ -83,7 +83,7 @@ public class Registro_Fichas extends javax.swing.JInternalFrame {
                 txtfechaActionPerformed(evt);
             }
         });
-        getContentPane().add(txtfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 195, -1));
+        getContentPane().add(txtfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 160, -1));
 
         txtsemestre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,11 +92,8 @@ public class Registro_Fichas extends javax.swing.JInternalFrame {
         });
         getContentPane().add(txtsemestre, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 157, -1));
 
-        btn_Buscar.setText("Buscar");
-        getContentPane().add(btn_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(563, 173, 80, 50));
-
         jButton6.setText("muñeco");
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 60, -1));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 120, -1));
 
         jButton7.setText("libro");
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, -1, -1));
@@ -116,6 +113,11 @@ public class Registro_Fichas extends javax.swing.JInternalFrame {
         jPanel1.add(btn_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 80, 50));
 
         btn_Registrar.setText("Registrar");
+        btn_Registrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_RegistrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_Registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 80, 50));
 
         btn_Modificar.setText("Modificar");
@@ -127,6 +129,9 @@ public class Registro_Fichas extends javax.swing.JInternalFrame {
         jPanel1.add(btn_Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 80, 50));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 520, 110));
+
+        btn_Buscar.setText("Buscar");
+        getContentPane().add(btn_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 80, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -147,14 +152,19 @@ public class Registro_Fichas extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_ModificarActionPerformed
 
+    private void btn_RegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistrarActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btn_RegistrarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Buscar;
-    private javax.swing.JButton btn_Eliminar;
-    private javax.swing.JButton btn_Modificar;
-    private javax.swing.JButton btn_Registrar;
-    private javax.swing.JButton btn_Salir;
-    private javax.swing.JButton jButton6;
+    public javax.swing.JButton btn_Buscar;
+    public javax.swing.JButton btn_Eliminar;
+    public javax.swing.JButton btn_Modificar;
+    public javax.swing.JButton btn_Registrar;
+    public javax.swing.JButton btn_Salir;
+    public javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -163,10 +173,10 @@ public class Registro_Fichas extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    public static javax.swing.JTextField txtalumno;
-    private javax.swing.JTextField txtcodigo;
-    public static javax.swing.JTextField txtconsultar;
-    public static final javax.swing.JTextField txtfecha = new javax.swing.JTextField();
-    public static final javax.swing.JTextField txtsemestre = new javax.swing.JTextField();
+    public javax.swing.JTextField txtalumno;
+    public javax.swing.JTextField txtcodigo;
+    public javax.swing.JTextField txtconsultar;
+    public javax.swing.JTextField txtfecha;
+    public final javax.swing.JTextField txtsemestre = new javax.swing.JTextField();
     // End of variables declaration//GEN-END:variables
 }

@@ -9,9 +9,11 @@ import Alumnos.Consultar_Reportes_Alumnos;
 import Alumnos.Registrar_Alumnos;
 import Constructor.CtrListadoUser;
 import Constructor.CtrRegistrarUsuario;
+import Constructor.CtrRegistrarfichas;
 import Constructor.CtrRegistroAlumnos;
 import Constructor.CtrRegistroProfesores;
 import Docentes.RegistrarDocentes;
+import FichaMatricula.Registro_Fichas;
 import Mconfig.FondoEscritorio;
 import Modelo.ModeloProfersores;
 import Modelo.ModeloRegistrarAlumno;
@@ -318,6 +320,11 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconosdebarradeherramientas/Iconos/plan-de-estudios.png"))); // NOI18N
         jMenu15.setText("Registrar Ficha / Matricula");
+        jMenu15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu15MouseClicked(evt);
+            }
+        });
         jMenu3.add(jMenu15);
 
         jMenu17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconosdebarradeherramientas/Iconos/impresora.png"))); // NOI18N
@@ -572,6 +579,15 @@ public class Menu extends javax.swing.JFrame {
        vista.show();
        vista.toFront();
     }//GEN-LAST:event_jMenu39MouseClicked
+
+    private void jMenu15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu15MouseClicked
+        // TODO add your handling code here:
+        Registro_Fichas vista=new Registro_Fichas();
+        CtrRegistrarfichas fichas=new CtrRegistrarfichas(vista);
+        Escritorio.add(vista);
+        vista.toFront();
+        vista.show ();
+    }//GEN-LAST:event_jMenu15MouseClicked
 
     public class Cronometro implements ActionListener {
 

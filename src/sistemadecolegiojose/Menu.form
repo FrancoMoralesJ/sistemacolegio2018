@@ -119,6 +119,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Registrar Ficha / Matricula"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenu15MouseClicked"/>
+              </Events>
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu17">
               <Properties>
